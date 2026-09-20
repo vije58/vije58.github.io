@@ -1,1 +1,368 @@
+/* ---------- RESET ---------- */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8faf8;
+    color: #183b3a;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #079c91;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: .8;
+}
+
+.logo span {
+    display: block;
+    margin-left: 22px;
+
+    color: #183b3a;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+nav {
+    display: flex;
+    gap: 38px;
+}
+
+nav a {
+    font-size: 14px;
+    transition: opacity .3s ease;
+}
+
+nav a:hover {
+    opacity: .5;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 78vh;
+    max-width: 1400px;
+    margin: auto;
+    padding: 80px 6% 110px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: #079c91;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    max-width: 650px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(46px, 5vw, 78px);
+    line-height: 1.04;
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 em {
+    color: #079c91;
+    font-weight: 400;
+}
+
+.intro {
+    max-width: 530px;
+    font-size: 17px;
+    color: #54706e;
+}
+
+.hero-links {
+    margin-top: 38px;
+
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.button {
+    display: inline-block;
+
+    background: #bceee8;
+    padding: 13px 30px;
+    border-radius: 40px;
+
+    font-size: 14px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: #a4e5dd;
+}
+
+.text-link {
+    font-size: 14px;
+    border-bottom: 1px solid #079c91;
+}
+
+
+/* ---------- HERO ARTWORK ---------- */
+
+.hero-image {
+    position: relative;
+}
+
+.image-placeholder {
+    height: 570px;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dce7e4;
+    color: #718b87;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+
+    transition: transform .5s ease;
+}
+
+.image-placeholder:hover {
+    transform: translateY(-8px);
+}
+
+
+/* ---------- WORK ---------- */
+
+.work-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 120px 6%;
+}
+
+.section-heading {
+    margin-bottom: 65px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 45px;
+}
+
+.work-image {
+    height: 460px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #dce7e4;
+    color: #718b87;
+
+    margin-bottom: 20px;
+
+    transition: transform .4s ease;
+}
+
+.work-item:hover .work-image {
+    transform: translateY(-7px);
+}
+
+.work-item h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.work-item p {
+    margin-top: 5px;
+    color: #718b87;
+    font-size: 13px;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 140px 6%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    border-top: 1px solid #cbd9d6;
+}
+
+.about-section h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.about-text {
+    max-width: 550px;
+    font-size: 18px;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+}
+
+
+/* ---------- CV ---------- */
+
+.simple-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 120px 6%;
+
+    border-top: 1px solid #cbd9d6;
+}
+
+.simple-section h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+
+    margin-bottom: 35px;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 140px 6%;
+
+    border-top: 1px solid #cbd9d6;
+}
+
+.contact-section h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 7vw, 90px);
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+.contact-section > a {
+    font-size: 18px;
+    border-bottom: 1px solid #079c91;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    max-width: 1400px;
+    margin: auto;
+    padding: 35px 6%;
+
+    color: #718b87;
+    font-size: 12px;
+
+    border-top: 1px solid #cbd9d6;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        padding: 25px 7%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 70px 7%;
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .image-placeholder {
+        height: 450px;
+    }
+
+    .work-section,
+    .about-section,
+    .simple-section,
+    .contact-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+}
