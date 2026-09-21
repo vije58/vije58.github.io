@@ -148,20 +148,15 @@ nav a:hover {
 
 /* ---------- HERO ARTWORK ---------- */
 
-.hero-image {
-    position: relative;
-}
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 6% 100px;
 
- width: 100%;
-    max-height: 460px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    transition: transform 0.8s ease;
-}
-
-.image-placeholder:hover {
-    transform: translateY(-8px);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
 }
 
 
