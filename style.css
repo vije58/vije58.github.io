@@ -519,3 +519,25 @@ footer {
         gap: 40px;
     }
 }
+/* HERO IMAGE — FINAL DESKTOP SIZE */
+
+@media (min-width: 901px) {
+
+    .hero {
+        grid-template-columns: 1fr 500px;
+        gap: 70px;
+    }
+
+    .hero-image {
+        width: 500px;
+        max-width: 500px;
+        justify-self: end;
+    }
+
+    .hero-artwork {
+        width: 500px;
+        max-width: 500px;
+        height: auto;
+    }
+
+}
