@@ -1,3 +1,8 @@
+/* ========================================
+   VAJIHE ZAMANIDERKANI PORTFOLIO
+   ======================================== */
+
+
 /* ---------- RESET ---------- */
 
 * {
@@ -11,9 +16,10 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f8faf8;
-    color: #183b3a;
+    background-color: #fafcfb;
+    color: #173c3a;
     line-height: 1.6;
 }
 
@@ -22,81 +28,123 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
 
-/* ---------- HEADER ---------- */
+
+/* ========================================
+   HEADER
+   ======================================== */
 
 .site-header {
     width: 100%;
-    max-width: 1400px;
-    margin: auto;
-    padding: 30px 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 28px 40px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+
+/* LOGO */
+
 .logo {
     color: #079c91;
-    font-size: 30px;
+
+    font-size: 28px;
     font-weight: 700;
-    line-height: .8;
+    line-height: 0.8;
 }
 
 .logo span {
     display: block;
-    margin-left: 22px;
 
-    color: #183b3a;
-    font-size: 11px;
+    margin-left: 22px;
+    margin-top: 4px;
+
+    color: #173c3a;
+
+    font-size: 10px;
     font-weight: 500;
 }
 
+
+/* NAVIGATION */
+
 nav {
     display: flex;
-    gap: 38px;
+    align-items: center;
+    gap: 35px;
 }
 
 nav a {
     font-size: 14px;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-    opacity: .5;
+    opacity: 0.5;
 }
 
 
-/* ---------- HERO ---------- */
+/* ========================================
+   HERO
+   ======================================== */
 
 .hero {
-    min-height: 65vh;
-    max-width: 1400px;
-    margin: auto;
-    padding: 80px 6% 110px;
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 75px 40px 100px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
+
+    /* text is larger than image */
+    grid-template-columns: 1.25fr 0.75fr;
+
+    gap: 70px;
+
     align-items: center;
 }
 
-.eyebrow {
-    color: #079c91;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+
+/* HERO TEXT */
+
+.hero-text {
+    max-width: 580px;
 }
 
+.eyebrow {
+    margin-bottom: 18px;
+
+    color: #079c91;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+
+/* MAIN TITLE */
+
 .hero h1 {
-    max-width: 650px;
+    margin: 0 0 25px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(46px, 5vw, 78px);
-    line-height: 1.04;
-    font-weight: 400;
 
-    margin-bottom: 30px;
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.08;
+
+    font-weight: 400;
 }
 
 .hero h1 em {
@@ -104,269 +152,464 @@ nav a:hover {
     font-weight: 400;
 }
 
+
+/* INTRO TEXT */
+
 .intro {
-    max-width: 530px;
-    font-size: 17px;
-    color: #54706e;
+    max-width: 500px;
+
+    color: #607774;
+
+    font-size: 15px;
+
+    line-height: 1.7;
 }
+
+
+/* HERO LINKS */
 
 .hero-links {
-    margin-top: 38px;
+    margin-top: 30px;
 
     display: flex;
-    gap: 28px;
     align-items: center;
+
+    gap: 25px;
 }
 
 
-/* ---------- BUTTON ---------- */
+/* ========================================
+   BUTTONS
+   ======================================== */
 
 .button {
     display: inline-block;
 
-    background: #bceee8;
-    padding: 13px 30px;
-    border-radius: 40px;
+    padding: 11px 25px;
 
-    font-size: 14px;
+    background-color: #c5eee9;
+
+    border-radius: 30px;
+
+    font-size: 13px;
 
     transition:
-        transform .3s ease,
-        background .3s ease;
+        transform 0.3s ease,
+        background-color 0.3s ease;
 }
 
 .button:hover {
-    transform: translateY(-3px);
-    background: #a4e5dd;
+    transform: translateY(-2px);
+
+    background-color: #aee5df;
 }
+
 
 .text-link {
-    font-size: 14px;
-    border-bottom: 1px solid #079c91;
-}
+    padding-bottom: 2px;
 
-
-/* ---------- HERO ARTWORK ---------- */
-
-.hero {
-    max-width: 1200px;
-    margin: auto;
-    padding: 80px 6% 100px;
-
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 70px;
-    align-items: center;
-}
-
-
-/* ---------- WORK ---------- */
-
-.work-section {
-    max-width: 1400px;
-    margin: auto;
-    padding: 120px 6%;
-}
-
-.section-heading {
-    margin-bottom: 65px;
-}
-
-.section-heading h2 {
-    font-family: Georgia, serif;
-    font-size: 48px;
-    font-weight: 400;
-}
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px 45px;
-}
-
-.work-image {
-    height: 460px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #dce7e4;
-    color: #718b87;
-
-    margin-bottom: 20px;
-
-    transition: transform .4s ease;
-}
-
-.work-item:hover .work-image {
-    transform: translateY(-7px);
-}
-
-.work-item h3 {
-    font-family: Georgia, serif;
-    font-size: 25px;
-    font-weight: 400;
-}
-
-.work-item p {
-    margin-top: 5px;
-    color: #718b87;
     font-size: 13px;
-}
 
-
-/* ---------- ABOUT ---------- */
-
-.about-section {
-    max-width: 1400px;
-    margin: auto;
-    padding: 140px 6%;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-
-    border-top: 1px solid #cbd9d6;
-}
-
-.about-section h2 {
-    font-family: Georgia, serif;
-    font-size: 48px;
-    line-height: 1.15;
-    font-weight: 400;
-}
-
-.about-text {
-    max-width: 550px;
-    font-size: 18px;
-}
-
-.about-text p {
-    margin-bottom: 25px;
-}
-
-
-/* ---------- CV ---------- */
-
-.simple-section {
-    max-width: 1400px;
-    margin: auto;
-    padding: 120px 6%;
-
-    border-top: 1px solid #cbd9d6;
-}
-
-.simple-section h2 {
-    font-family: Georgia, serif;
-    font-size: 48px;
-    font-weight: 400;
-
-    margin-bottom: 35px;
-}
-
-
-/* ---------- CONTACT ---------- */
-
-.contact-section {
-    max-width: 1400px;
-    margin: auto;
-    padding: 140px 6%;
-
-    border-top: 1px solid #cbd9d6;
-}
-
-.contact-section h2 {
-    font-family: Georgia, serif;
-    font-size: clamp(50px, 7vw, 90px);
-    font-weight: 400;
-
-    margin-bottom: 30px;
-}
-
-.contact-section > a {
-    font-size: 18px;
     border-bottom: 1px solid #079c91;
 }
 
 
-/* ---------- FOOTER ---------- */
+/* ========================================
+   HERO ARTWORK
+   ======================================== */
 
-footer {
-    max-width: 1400px;
-    margin: auto;
-    padding: 35px 6%;
+.hero-image {
+    width: 100%;
 
-    color: #718b87;
-    font-size: 12px;
+    /* THIS CONTROLS THE IMAGE SIZE */
+    max-width: 330px;
 
-    border-top: 1px solid #cbd9d6;
+    justify-self: end;
+
+    overflow: hidden;
 }
 
 
-/* ---------- MOBILE ---------- */
+/* ACTUAL IMAGE */
 
-@media (max-width: 800px) {
-
-    .site-header {
-        padding: 25px 7%;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 11px;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 70px 7%;
-        gap: 55px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .image-placeholder {
-        height: 450px;
-    }
-
-    .work-section,
-    .about-section,
-    .simple-section,
-    .contact-section {
-        padding-left: 7%;
-        padding-right: 7%;
-    }
-
-    .work-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-section {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-    .hero-artwork {
+.hero-artwork {
     width: 100%;
-    height: 570px;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
     display: block;
 
     transition: transform 0.8s ease;
 }
 
-.hero-image {
-    overflow: hidden;
-}
+
+/* SMALL INTERACTION */
 
 .hero-image:hover .hero-artwork {
     transform: scale(1.025);
 }
 
+
+/* ========================================
+   SELECTED WORK
+   ======================================== */
+
+.work-section {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px 120px;
 }
 
+
+/* SECTION HEADING */
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* WORK GRID */
+
+.work-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 70px 40px;
+}
+
+
+/* ARTWORK PLACEHOLDERS */
+
+.work-image {
+    width: 100%;
+
+    height: 360px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #e2eae8;
+
+    color: #708784;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* ARTWORK HOVER */
+
+.work-item:hover .work-image {
+    transform: translateY(-5px);
+}
+
+
+/* ARTWORK TITLE */
+
+.work-item h3 {
+    margin-bottom: 4px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+}
+
+
+/* ARTWORK DETAILS */
+
+.work-item p {
+    color: #718783;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   ABOUT
+   ======================================== */
+
+.about-section {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 110px 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    border-top: 1px solid #d1dcda;
+}
+
+
+.about-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+}
+
+
+.about-text {
+    max-width: 480px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.about-text p {
+    margin-bottom: 22px;
+}
+
+
+/* ========================================
+   CV
+   ======================================== */
+
+.simple-section {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px;
+
+    border-top: 1px solid #d1dcda;
+}
+
+
+.simple-section h2 {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+}
+
+
+/* ========================================
+   CONTACT
+   ======================================== */
+
+.contact-section {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 110px 40px;
+
+    border-top: 1px solid #d1dcda;
+}
+
+
+.contact-section h2 {
+    margin-bottom: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(46px, 6vw, 72px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.contact-section > a {
+    padding-bottom: 3px;
+
+    font-size: 16px;
+
+    border-bottom: 1px solid #079c91;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 30px 40px;
+
+    color: #718783;
+
+    font-size: 11px;
+
+    border-top: 1px solid #d1dcda;
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+
+        gap: 40px;
+    }
+
+    .hero-image {
+        max-width: 280px;
+    }
+
+    .hero-artwork {
+        max-height: 260px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+
+    .site-header {
+        padding: 22px 24px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 55px 24px 80px;
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-image {
+        width: 75%;
+
+        max-width: 320px;
+
+        justify-self: center;
+    }
+
+    .hero-artwork {
+        max-height: none;
+    }
+
+
+    /* WORK */
+
+    .work-section {
+        padding: 80px 24px 100px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .work-image {
+        height: 330px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        padding: 90px 24px;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    /* CV */
+
+    .simple-section {
+        padding: 90px 24px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+        padding: 90px 24px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 30px 24px;
+    }
+
+}
