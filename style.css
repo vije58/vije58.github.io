@@ -70,7 +70,7 @@ nav a:hover {
 /* ---------- HERO ---------- */
 
 .hero {
-    min-height: 78vh;
+    min-height: 65vh;
     max-width: 1400px;
     margin: auto;
     padding: 80px 6% 110px;
@@ -152,21 +152,12 @@ nav a:hover {
     position: relative;
 }
 
-.image-placeholder {
-    height: 570px;
-    border-radius: 4px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #dce7e4;
-    color: #718b87;
-
-    font-family: Georgia, serif;
-    font-size: 22px;
-
-    transition: transform .5s ease;
+ width: 100%;
+    max-height: 460px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    transition: transform 0.8s ease;
 }
 
 .image-placeholder:hover {
