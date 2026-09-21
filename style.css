@@ -221,15 +221,15 @@ nav a:hover {
 /* ===== FINAL HERO SIZE OVERRIDE ===== */
 
 .hero .hero-image {
-    width: 420px !important;
-    max-width: 420px !important;
+    width: 520px !important;
+    max-width: 520px !important;
     height: auto !important;
     justify-self: end !important;
 }
 
 .hero .hero-image .hero-artwork {
-    width: 420px !important;
-    max-width: 420px !important;
+    width: 520px !important;
+    max-width: 520px !important;
     height: auto !important;
     max-height: none !important;
     object-fit: contain !important;
