@@ -218,20 +218,21 @@ nav a:hover {
    HERO ARTWORK
    ======================================== */
 
-.hero-image {
-    width: 100%;
-    max-width: 400px;
-    justify-self: end;
-    overflow: hidden;
+/* ===== FINAL HERO SIZE OVERRIDE ===== */
+
+.hero .hero-image {
+    width: 420px !important;
+    max-width: 420px !important;
+    height: auto !important;
+    justify-self: end !important;
 }
 
-.hero-artwork {
-    width: 100%;
-    height: auto;
-    max-height: 360px;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.8s ease;
+.hero .hero-image .hero-artwork {
+    width: 420px !important;
+    max-width: 420px !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
 }
 
 /* SMALL INTERACTION */
