@@ -220,31 +220,19 @@ nav a:hover {
 
 .hero-image {
     width: 100%;
-
-    /* THIS CONTROLS THE IMAGE SIZE */
-    max-width: 330px;
-
+    max-width: 400px;
     justify-self: end;
-
     overflow: hidden;
 }
-
-
-/* ACTUAL IMAGE */
 
 .hero-artwork {
     width: 100%;
     height: auto;
-
-    max-height: 300px;
-
+    max-height: 360px;
     object-fit: contain;
-
     display: block;
-
     transition: transform 0.8s ease;
 }
-
 
 /* SMALL INTERACTION */
 
