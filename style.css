@@ -1,6 +1,5 @@
 /* =========================================
-   VAJIHE ZAMANIDERKANI — PORTFOLI0
-   Clean Version
+   VAJIHE ZAMANIDERKANI — PORTFOLIO
    ========================================= */
 
 
@@ -99,8 +98,8 @@ img {
 
 nav {
     display: flex;
-    gap: 38px;
     align-items: center;
+    gap: 38px;
 }
 
 nav a {
@@ -119,14 +118,13 @@ nav a:hover {
 
 .hero {
     width: calc(100% - 80px);
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
-
-    padding: 100px 0 130px;
+    padding: 85px 0 100px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
-    gap: 80px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr);
+    gap: 70px;
     align-items: center;
 }
 
@@ -135,11 +133,11 @@ nav a:hover {
 }
 
 .hero h1 {
-    max-width: 650px;
+    max-width: 680px;
     margin-bottom: 28px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(42px, 4.3vw, 62px);
+    font-size: clamp(44px, 4.2vw, 62px);
     font-weight: 400;
     line-height: 1.06;
 }
@@ -150,7 +148,7 @@ nav a:hover {
 }
 
 .intro {
-    max-width: 550px;
+    max-width: 570px;
     color: #607774;
     font-size: 15px;
     line-height: 1.75;
@@ -158,6 +156,7 @@ nav a:hover {
 
 .hero-links {
     margin-top: 32px;
+
     display: flex;
     align-items: center;
     gap: 28px;
@@ -168,7 +167,7 @@ nav a:hover {
 
 .hero-image {
     width: 100%;
-    max-width: 420px;
+    max-width: 460px;
     justify-self: end;
     overflow: hidden;
 }
@@ -176,7 +175,7 @@ nav a:hover {
 .hero-artwork {
     width: 100%;
     height: auto;
-    display: block;
+
     transition: transform .8s ease;
 }
 
@@ -191,15 +190,15 @@ nav a:hover {
 
 .work-section {
     width: calc(100% - 80px);
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 110px 0 130px;
+    padding: 90px 0 110px;
 
     border-top: 1px solid #d7e1df;
 }
 
 .section-heading {
-    margin-bottom: 55px;
+    margin-bottom: 50px;
 }
 
 .section-heading h2 {
@@ -222,12 +221,13 @@ nav a:hover {
 .work-image {
     width: 100%;
     aspect-ratio: 4 / 3;
-
     margin-bottom: 20px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
 
     background: #e3ebe9;
     color: #718783;
@@ -239,7 +239,7 @@ nav a:hover {
 }
 
 .work-item:hover .work-image {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .work-item h3 {
@@ -263,24 +263,25 @@ nav a:hover {
 
 .about-section {
     width: calc(100% - 80px);
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 120px 0;
+    padding: 100px 0;
 
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 110px;
+    gap: 90px;
     align-items: start;
 
     border-top: 1px solid #d7e1df;
 }
 
-.about-section > div {
+.about-heading,
+.about-text {
     min-width: 0;
 }
 
 .about-section h2 {
-    max-width: 470px;
+    max-width: 480px;
 
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(40px, 4vw, 52px);
@@ -289,8 +290,7 @@ nav a:hover {
 }
 
 .about-text {
-    width: 100%;
-    max-width: 480px;
+    max-width: 500px;
 
     font-size: 16px;
     line-height: 1.8;
@@ -307,9 +307,9 @@ nav a:hover {
 
 .simple-section {
     width: calc(100% - 80px);
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 110px 0;
+    padding: 90px 0;
 
     border-top: 1px solid #d7e1df;
 }
@@ -329,9 +329,9 @@ nav a:hover {
 
 .contact-section {
     width: calc(100% - 80px);
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 120px 0;
+    padding: 100px 0;
 
     border-top: 1px solid #d7e1df;
 }
@@ -347,7 +347,9 @@ nav a:hover {
 
 .contact-section > a {
     padding-bottom: 3px;
+
     font-size: 16px;
+
     border-bottom: 1px solid #079c91;
 }
 
@@ -358,7 +360,7 @@ nav a:hover {
 
 footer {
     width: calc(100% - 80px);
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 30px 0 45px;
 
@@ -389,7 +391,7 @@ footer {
     }
 
     .about-section {
-        gap: 60px;
+        gap: 55px;
     }
 }
 
@@ -433,10 +435,10 @@ footer {
     /* HERO */
 
     .hero {
-        padding: 65px 0 90px;
+        padding: 60px 0 80px;
 
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 45px;
     }
 
     .hero h1 {
@@ -445,7 +447,7 @@ footer {
 
     .hero-image {
         width: 100%;
-        max-width: 420px;
+        max-width: 460px;
         justify-self: start;
     }
 
@@ -453,22 +455,22 @@ footer {
     /* WORK */
 
     .work-section {
-        padding: 90px 0 100px;
+        padding: 75px 0 90px;
     }
 
     .work-grid {
         grid-template-columns: 1fr;
-        gap: 65px;
+        gap: 60px;
     }
 
 
     /* ABOUT */
 
     .about-section {
-        padding: 90px 0;
+        padding: 80px 0;
 
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 40px;
     }
 
     .about-text {
@@ -480,64 +482,6 @@ footer {
 
     .simple-section,
     .contact-section {
-        padding: 90px 0;
+        padding: 80px 0;
     }
-}
-/* ===== ABOUT LAYOUT FIX ===== */
-
-.about-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-}
-
-.about-section > div {
-    width: 100%;
-    min-width: 0;
-}
-
-.about-section h2 {
-    width: 100%;
-    max-width: 450px;
-}
-
-.about-text {
-    width: 100%;
-    max-width: 500px;
-}
-
-.about-text p {
-    width: 100%;
-    max-width: 500px;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-    .about-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-/* HERO IMAGE — FINAL DESKTOP SIZE */
-
-@media (min-width: 901px) {
-
-    .hero {
-        grid-template-columns: 1fr 500px;
-        gap: 70px;
-    }
-
-    .hero-image {
-        width: 500px;
-        max-width: 500px;
-        justify-self: end;
-    }
-
-    .hero-artwork {
-        width: 500px;
-        max-width: 500px;
-        height: auto;
-    }
-
 }
