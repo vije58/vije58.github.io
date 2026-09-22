@@ -1,43 +1,63 @@
-/* Vajihe Zamaniderkani — portfolio homepage
-   Built from the supplied Figma direction.
-*/
+/* =========================================================
+   VAJIHE ZAMANIDERKANI — PORTFOLIO
+   Clean CSS
+   Sans-serif: Satoshi
+   Serif: Playfair Display
+   ========================================================= */
 
 :root {
-  --paper: #fbfdfc;
-  --ink: #164846;
-  --muted: #627b78;
-  --aqua: #1fc8bc;
-  --teal: #008f87;
-  --mint: #baf1eb;
-  --line: #20c7bc;
-  --placeholder: #dedede;
+    --paper: #fbfdfc;
+    --ink: #164846;
+    --dark: #103f3d;
+    --muted: #627b78;
+
+    --aqua: #1fc8bc;
+    --teal: #008f87;
+    --mint: #baf1eb;
+
+    --line: #20c7bc;
+    --placeholder: #dedede;
 }
 
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Satoshi", Arial, Helvetica, sans-serif;
-  line-height: 1.5;
+    margin: 0;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
+
+
+/* =========================================================
+   MAIN PAGE WIDTH
+   ========================================================= */
 
 .site-header,
 .hero,
@@ -48,484 +68,1057 @@ img {
 .cv-section,
 .contact-section,
 footer {
-  width: min(1180px, calc(100% - 80px));
-  margin-inline: auto;
+    width: min(1180px, calc(100% - 80px));
+    margin-inline: auto;
 }
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .site-header {
-  min-height: 98px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  border-bottom: 1px solid rgba(0, 143, 135, .28);
+    min-height: 98px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    border-bottom: 1px solid rgba(0, 143, 135, 0.28);
 }
 
+
+/* LOGO */
+
 .logo {
-  display: inline-flex;
-  align-items: center;
-  flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
 }
 
 .logo img {
-  display: block;
-  width: 150px;
-  height: auto;
+    display: block;
+    width: 150px;
+    height: auto;
 }
 
+
+/* NAVIGATION */
+
 nav {
-  display: flex;
-  align-items: center;
-  gap: clamp(22px, 4vw, 58px);
+    display: flex;
+    align-items: center;
+
+    gap: clamp(22px, 4vw, 58px);
 }
 
 nav a {
-  font-size: 13px;
-  transition: color .2s ease, transform .2s ease;
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 nav a:hover,
 nav a:focus-visible {
-  color: var(--aqua);
-  transform: translateY(-1px);
+    color: var(--aqua);
+    transform: translateY(-2px);
 }
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
-  min-height: 510px;
-  padding: 72px 0 58px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(400px, .85fr);
-  align-items: center;
-  gap: 55px;
+    position: relative;
+
+    min-height: 650px;
+
+    padding: 72px 0 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(400px, 0.85fr);
+
+    align-items: center;
+
+    gap: 45px;
+
+    /*
+       Soft atmospheric color similar to your reference.
+       The color belongs to the HERO, not the portrait box.
+    */
+
+    background:
+
+        radial-gradient(
+            circle at 0% 50%,
+            rgba(43, 211, 199, 0.28) 0%,
+            rgba(104, 224, 215, 0.17) 24%,
+            rgba(180, 239, 234, 0.08) 40%,
+            rgba(251, 253, 252, 0) 58%
+        ),
+
+        radial-gradient(
+            circle at 82% 48%,
+            rgba(50, 167, 165, 0.17) 0%,
+            rgba(113, 210, 205, 0.09) 25%,
+            rgba(251, 253, 252, 0) 48%
+        );
 }
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-copy {
+    position: relative;
+    z-index: 4;
+}
+
+
+/* ARTIST · DESIGNER · EDUCATOR */
 
 .eyebrow {
-  margin: 0 0 16px;
-  color: var(--teal);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
+    margin: 0 0 16px;
+
+    color: var(--teal);
+
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
 }
+
+
+/* MAIN HERO TITLE */
 
 .hero h1 {
-  max-width: 650px;
-  margin: 0;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(46px, 5vw, 70px);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -2.2px;
+    max-width: 690px;
 
-  background: linear-gradient(100deg, #35cfc2 0%, #159f96 24%, #176b66 42%, #164846 62%, #103f3d 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(46px, 5vw, 70px);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: -2.2px;
+
+    /*
+       Dark color arrives earlier,
+       closer to your Figma design.
+    */
+
+    background: linear-gradient(
+        100deg,
+        #31c9bd 0%,
+        #179f96 20%,
+        #167a74 34%,
+        #155b57 47%,
+        #164846 62%,
+        #103f3d 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
 }
+
+
+/* FINE ART */
 
 .hero h1 em {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  font-style: italic;
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-weight: 500;
+    font-style: italic;
 }
+
+
+/* HERO DESCRIPTION */
 
 .intro {
-  max-width: 610px;
-  margin: 54px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
+    max-width: 620px;
+
+    margin: 44px 0 0;
+
+    color: var(--muted);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.55;
 }
 
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
 .hero-actions {
-  margin-top: 38px;
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
+    margin-top: 36px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
 }
 
 .pill {
-  min-width: 190px;
-  padding: 13px 25px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #c6f5ef, #aeece6);
-  color: var(--ink);
-  font: inherit;
-  font-size: 12px;
-  cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease;
+    min-width: 190px;
+
+    padding: 13px 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        #c6f5ef,
+        #aeece6
+    );
+
+    color: var(--ink);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 .pill:hover,
 .pill:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 143, 135, .12);
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        90deg,
+        #b7f1ea,
+        #98e5dd
+    );
+
+    box-shadow:
+        0 10px 25px rgba(0, 143, 135, 0.14);
 }
+
+
+/* =========================================================
+   HERO PORTRAIT
+   ========================================================= */
 
 .portrait-wrap {
-  position: relative;
-  width: min(100%, 500px);
-  aspect-ratio: 4 / 5;
-  justify-self: end;
-  overflow: hidden;
-  border-radius: 28px;
+    position: relative;
+
+    width: min(100%, 550px);
+
+    height: 600px;
+
+    justify-self: end;
+    align-self: end;
+
+    overflow: visible;
+
+    z-index: 2;
 }
 
-.portrait-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 34%;
-  border-radius: 28px;
-  animation: portraitFloat 7s ease-in-out infinite;
-  transition: transform .6s ease, filter .6s ease;
-}
 
-.portrait-wrap:hover img {
-  animation-play-state: paused;
-  transform: scale(1.025);
-}
+/*
+   We are NOT using the old colored rectangles anymore.
+*/
 
 .portrait-shape {
-  display: none;
+    display: none;
 }
+
+
+/* SOFT SHADOW / ATMOSPHERE BEHIND PORTRAIT */
+
+.portrait-wrap::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    width: 420px;
+    height: 450px;
+
+    right: -10px;
+    bottom: 35px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(39, 161, 158, 0.18) 0%,
+        rgba(70, 193, 187, 0.10) 42%,
+        rgba(251, 253, 252, 0) 72%
+    );
+
+    filter: blur(30px);
+
+    animation:
+        atmosphereFloat
+        10s
+        ease-in-out
+        infinite;
+}
+
+
+/* SECOND SOFT LIGHT */
+
+.portrait-wrap::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    width: 290px;
+    height: 290px;
+
+    left: -60px;
+    bottom: 40px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(77, 215, 205, 0.13);
+
+    filter: blur(65px);
+}
+
+
+/* ACTUAL CUTOUT PORTRAIT */
+
+.portrait-wrap img {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 116%;
+    max-width: none;
+
+    height: auto;
+
+    right: -10%;
+    bottom: -50px;
+
+    object-fit: contain;
+
+    transform-origin: bottom center;
+
+    animation:
+        portraitFloat
+        7s
+        ease-in-out
+        infinite;
+
+    transition:
+        filter 0.4s ease;
+}
+
+
+/* PAUSE THE MOTION ON HOVER */
+
+.portrait-wrap:hover img {
+    animation-play-state: paused;
+
+    filter: drop-shadow(
+        0 14px 24px
+        rgba(16, 63, 61, 0.08)
+    );
+}
+
+
+/* PORTRAIT MOVEMENT */
 
 @keyframes portraitFloat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.018);
-  }
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(-0.4deg);
+    }
 }
 
+
+/* BACKGROUND MOVEMENT */
+
+@keyframes atmosphereFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-8px, 5px)
+            scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   THREE LINES BELOW HERO
+   ========================================================= */
+
 .triple-rule {
-  padding: 0 0 46px;
+    position: relative;
+
+    z-index: 5;
+
+    padding: 0 0 46px;
 }
 
 .triple-rule span {
-  display: block;
-  height: 2px;
-  margin: 0 0 8px;
-  background: linear-gradient(90deg, var(--aqua), var(--teal), var(--aqua));
+    display: block;
+
+    height: 2px;
+
+    margin: 0 0 8px;
+
+    background: linear-gradient(
+        90deg,
+        var(--aqua),
+        var(--teal),
+        var(--aqua)
+    );
 }
 
+
+/* =========================================================
+   PORTFOLIO SECTIONS
+   ========================================================= */
+
 .portfolio-section {
-  padding: 12px 0 88px;
+    padding: 12px 0 88px;
 }
 
 .section-title {
-  margin-bottom: 54px;
-  text-align: center;
+    margin-bottom: 54px;
+
+    text-align: center;
 }
 
 .section-title .eyebrow {
-  margin-bottom: 9px;
+    margin-bottom: 9px;
 }
 
 .section-title h2 {
-  margin: 0;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 27px;
-  font-weight: 400;
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
 }
 
+
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
+
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 42px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 42px;
+}
+
+.project-card {
+    min-width: 0;
 }
 
 .project-image {
-  width: 100%;
-  aspect-ratio: 1.12 / 1;
-  border-radius: 27px;
-  overflow: hidden;
+    width: 100%;
+
+    aspect-ratio: 1.12 / 1;
+
+    border-radius: 27px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-image:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(16, 63, 61, 0.08);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
 }
 
 .project-image.placeholder {
-  display: grid;
-  place-items: center;
-  background: var(--placeholder);
-  color: #8b8b8b;
-  font-size: 11px;
+    display: grid;
+
+    place-items: center;
+
+    background: var(--placeholder);
+
+    color: #8b8b8b;
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
 }
 
 .project-card h3 {
-  margin: 18px 0 4px;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 19px;
-  font-weight: 400;
+    margin: 18px 0 4px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+
+    font-weight: 400;
 }
 
 .project-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 11px;
+    margin: 0;
+
+    color: var(--muted);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
 }
+
+
+/* =========================================================
+   SECTION DIVIDERS
+   ========================================================= */
 
 .single-rule {
-  height: 2px;
-  background: linear-gradient(90deg, var(--aqua), var(--teal), var(--aqua));
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        var(--aqua),
+        var(--teal),
+        var(--aqua)
+    );
 }
 
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
 .about-section {
-  padding: 82px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
+    padding: 82px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
 }
 
 .about-section h2,
 .cv-section h2 {
-  margin: 0;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 400;
-  line-height: 1.12;
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(36px, 4vw, 52px);
+
+    font-weight: 400;
+
+    line-height: 1.12;
 }
 
 .about-copy {
-  max-width: 510px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.8;
+    max-width: 510px;
+
+    color: var(--muted);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.about-copy p {
+    margin-bottom: 22px;
 }
 
 .about-copy p:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
+
+/* =========================================================
+   CV
+   ========================================================= */
+
 .cv-section {
-  padding: 80px 0;
+    padding: 80px 0;
 }
 
 .cv-section h2 {
-  margin-bottom: 32px;
+    margin-bottom: 32px;
 }
 
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
 .contact-section {
-  padding: 92px 0;
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 110px;
-  align-items: start;
+    padding: 92px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 110px;
+
+    align-items: start;
 }
 
 .contact-heading h2 {
-  margin: 0 0 24px;
-  color: #111;
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: .96;
-  letter-spacing: -2px;
+    margin: 0 0 24px;
+
+    color: #111;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(40px, 5vw, 64px);
+
+    font-weight: 500;
+
+    line-height: 0.96;
+
+    letter-spacing: -2px;
 }
 
 .contact-heading > a {
-  color: var(--teal);
-  font-size: 12px;
-  border-bottom: 1px solid var(--teal);
+    color: var(--teal);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    border-bottom:
+        1px solid var(--teal);
 }
 
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
 .contact-form {
-  display: grid;
-  gap: 24px;
+    display: grid;
+
+    gap: 24px;
 }
 
 .contact-form label {
-  display: grid;
-  gap: 7px;
-  color: var(--muted);
-  font-size: 11px;
+    display: grid;
+
+    gap: 7px;
+
+    color: var(--muted);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid #aebfbc;
-  border-radius: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--ink);
-  font: inherit;
-  resize: vertical;
+    width: 100%;
+
+    border: 0;
+
+    border-bottom:
+        1px solid #aebfbc;
+
+    border-radius: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--ink);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    resize: vertical;
 }
 
 .contact-form input {
-  height: 34px;
+    height: 34px;
 }
 
 .contact-form textarea {
-  min-height: 80px;
+    min-height: 80px;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--aqua);
+    border-color: var(--aqua);
 }
 
 .contact-form .pill {
-  min-width: 90px;
-  width: 90px;
-  justify-self: center;
+    min-width: 90px;
+    width: 90px;
+
+    justify-self: center;
 }
 
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 footer {
-  min-height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid rgba(0, 143, 135, .3);
-  color: var(--muted);
-  font-size: 10px;
+    min-height: 74px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-top:
+        1px solid
+        rgba(0, 143, 135, 0.30);
+
+    color: var(--muted);
+
+    font-family:
+        "Satoshi",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
 }
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr 300px;
-    gap: 40px;
-  }
 
-  .hero h1 {
-    font-size: 48px;
-  }
+    .hero {
+        min-height: 580px;
 
-  .intro {
-    margin-top: 34px;
-  }
+        grid-template-columns:
+            minmax(0, 1fr)
+            340px;
 
-  .card-grid {
-    gap: 25px;
-  }
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .intro {
+        margin-top: 34px;
+    }
+
+    .portrait-wrap {
+        width: 360px;
+        height: 520px;
+    }
+
+    .portrait-wrap img {
+        width: 120%;
+
+        right: -15%;
+        bottom: -35px;
+    }
+
+    .card-grid {
+        gap: 25px;
+    }
 }
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
-  .site-header,
-  .hero,
-  .triple-rule,
-  .portfolio-section,
-  .single-rule,
-  .about-section,
-  .cv-section,
-  .contact-section,
-  footer {
-    width: min(100% - 40px, 1180px);
-  }
 
-  .site-header {
-    padding: 22px 0;
-    align-items: flex-start;
-  }
+    .site-header,
+    .hero,
+    .triple-rule,
+    .portfolio-section,
+    .single-rule,
+    .about-section,
+    .cv-section,
+    .contact-section,
+    footer {
+        width:
+            min(100% - 40px, 1180px);
+    }
 
-  .logo img {
-    width: 125px;
-  }
 
-  nav {
-    max-width: 230px;
-    justify-content: flex-end;
-    gap: 10px 18px;
-    flex-wrap: wrap;
-  }
+    /* HEADER */
 
-  nav a {
-    font-size: 10px;
-  }
+    .site-header {
+        padding: 22px 0;
 
-  .hero {
-    padding: 55px 0 48px;
-    grid-template-columns: 1fr;
-  }
+        align-items: flex-start;
+    }
 
-  .hero h1 {
-    max-width: 540px;
-    font-size: clamp(42px, 12vw, 58px);
-  }
+    .logo img {
+        width: 125px;
+    }
 
-  .portrait-wrap {
-    width: min(92vw, 440px);
-    justify-self: center;
-  }
+    nav {
+        max-width: 230px;
 
-  .intro {
-    margin-top: 30px;
-  }
+        justify-content: flex-end;
 
-  .hero-actions {
-    gap: 12px;
-  }
+        gap: 10px 18px;
 
-  .pill {
-    min-width: 160px;
-  }
+        flex-wrap: wrap;
+    }
 
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+    nav a {
+        font-size: 10px;
+    }
 
-  .project-image {
-    aspect-ratio: 4 / 3;
-  }
 
-  .about-section,
-  .contact-section {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
+    /* HERO */
 
-  .about-section {
-    padding: 65px 0;
-  }
+    .hero {
+        min-height: auto;
 
-  .contact-section {
-    padding: 70px 0;
-  }
+        padding: 55px 0 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        background:
+
+            radial-gradient(
+                circle at 0% 30%,
+                rgba(43, 211, 199, 0.24),
+                rgba(251, 253, 252, 0) 52%
+            );
+    }
+
+    .hero h1 {
+        max-width: 560px;
+
+        font-size:
+            clamp(42px, 12vw, 58px);
+    }
+
+    .intro {
+        margin-top: 30px;
+
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+    }
+
+    .pill {
+        min-width: 160px;
+    }
+
+
+    /* PORTRAIT */
+
+    .portrait-wrap {
+        width:
+            min(100%, 440px);
+
+        height: 500px;
+
+        justify-self: center;
+
+        margin-top: 10px;
+    }
+
+    .portrait-wrap img {
+        width: 115%;
+
+        right: -7%;
+
+        bottom: -35px;
+    }
+
+
+    /* WORK */
+
+    .card-grid {
+        grid-template-columns: 1fr;
+
+        gap: 48px;
+    }
+
+    .project-image {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    /* ABOUT + CONTACT */
+
+    .about-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+    }
+
+    .about-section {
+        padding: 65px 0;
+    }
+
+    .contact-section {
+        padding: 70px 0;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        gap: 20px;
+    }
 }
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-}
+    html {
+        scroll-behavior: auto;
+    }
 
-
-/* =========================================
-   TYPOGRAPHY SYSTEM
-   Sans-serif = Satoshi
-   Serif = Playfair Display
-   ========================================= */
-
-body,
-button,
-input,
-textarea,
-select,
-nav,
-.eyebrow,
-.intro,
-.pill,
-.project-card p,
-.about-copy,
-.contact-heading > a,
-.contact-form,
-footer {
-  font-family: "Satoshi", Arial, Helvetica, sans-serif;
-}
-
-.hero h1,
-.section-title h2,
-.project-card h3,
-.about-section h2,
-.cv-section h2 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
