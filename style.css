@@ -1,0 +1,506 @@
+/* Vajihe Zamaniderkani — portfolio homepage
+   Built from the supplied Figma direction.
+*/
+
+:root {
+  --paper: #fbfdfc;
+  --ink: #164846;
+  --muted: #627b78;
+  --aqua: #1fc8bc;
+  --teal: #008f87;
+  --mint: #baf1eb;
+  --line: #20c7bc;
+  --placeholder: #dedede;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header,
+.hero,
+.triple-rule,
+.portfolio-section,
+.single-rule,
+.about-section,
+.cv-section,
+.contact-section,
+footer {
+  width: min(1180px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.site-header {
+  min-height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 1px solid rgba(0, 143, 135, .28);
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  color: var(--aqua);
+  line-height: .75;
+}
+
+.logo strong {
+  display: block;
+  font-size: 31px;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  display: block;
+  margin: 7px 0 0 31px;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: -.2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 4vw, 58px);
+}
+
+nav a {
+  font-size: 13px;
+  transition: color .2s ease, transform .2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--aqua);
+  transform: translateY(-1px);
+}
+
+.hero {
+  min-height: 510px;
+  padding: 72px 0 58px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
+  align-items: center;
+  gap: 75px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--teal);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 5vw, 70px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -2.2px;
+
+  background: linear-gradient(100deg, #35cfc2 0%, #14a99f 52%, #164846 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.intro {
+  max-width: 610px;
+  margin: 54px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.hero-actions {
+  margin-top: 38px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  min-width: 190px;
+  padding: 13px 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c6f5ef, #aeece6);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pill:hover,
+.pill:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 143, 135, .12);
+}
+
+.portrait-wrap {
+  position: relative;
+  width: min(100%, 390px);
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+}
+
+.portrait-wrap img {
+  position: relative;
+  z-index: 3;
+  width: 82%;
+  height: 82%;
+  object-fit: cover;
+  object-position: 50% 34%;
+  border-radius: 26px;
+}
+
+.portrait-shape {
+  position: absolute;
+  inset: 12%;
+  border-radius: 28px;
+  transform-origin: center;
+}
+
+.shape-one {
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(67, 221, 207, .48), rgba(13, 145, 136, .30));
+  transform: rotate(-18deg);
+}
+
+.shape-two {
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(150, 240, 231, .65), rgba(26, 185, 173, .32));
+  transform: rotate(13deg);
+}
+
+.shape-three {
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(47, 201, 188, .42), rgba(8, 116, 110, .20));
+  transform: rotate(4deg) translate(9px, 4px);
+}
+
+.triple-rule {
+  padding: 0 0 46px;
+}
+
+.triple-rule span {
+  display: block;
+  height: 2px;
+  margin: 0 0 8px;
+  background: linear-gradient(90deg, var(--aqua), var(--teal), var(--aqua));
+}
+
+.portfolio-section {
+  padding: 12px 0 88px;
+}
+
+.section-title {
+  margin-bottom: 54px;
+  text-align: center;
+}
+
+.section-title .eyebrow {
+  margin-bottom: 9px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 1.12 / 1;
+  border-radius: 27px;
+  overflow: hidden;
+}
+
+.project-image.placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--placeholder);
+  color: #8b8b8b;
+  font-size: 11px;
+}
+
+.project-card h3 {
+  margin: 18px 0 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.single-rule {
+  height: 2px;
+  background: linear-gradient(90deg, var(--aqua), var(--teal), var(--aqua));
+}
+
+.about-section {
+  padding: 82px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.about-section h2,
+.cv-section h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.about-copy {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-copy p:first-child {
+  margin-top: 0;
+}
+
+.cv-section {
+  padding: 80px 0;
+}
+
+.cv-section h2 {
+  margin-bottom: 32px;
+}
+
+.contact-section {
+  padding: 92px 0;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 110px;
+  align-items: start;
+}
+
+.contact-heading h2 {
+  margin: 0 0 24px;
+  color: #111;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: .96;
+  letter-spacing: -2px;
+}
+
+.contact-heading > a {
+  color: var(--teal);
+  font-size: 12px;
+  border-bottom: 1px solid var(--teal);
+}
+
+.contact-form {
+  display: grid;
+  gap: 24px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #aebfbc;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.contact-form input {
+  height: 34px;
+}
+
+.contact-form textarea {
+  min-height: 80px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--aqua);
+}
+
+.contact-form .pill {
+  min-width: 90px;
+  width: 90px;
+  justify-self: center;
+}
+
+footer {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 143, 135, .3);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .intro {
+    margin-top: 34px;
+  }
+
+  .card-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header,
+  .hero,
+  .triple-rule,
+  .portfolio-section,
+  .single-rule,
+  .about-section,
+  .cv-section,
+  .contact-section,
+  footer {
+    width: min(100% - 40px, 1180px);
+  }
+
+  .site-header {
+    padding: 22px 0;
+    align-items: flex-start;
+  }
+
+  nav {
+    max-width: 230px;
+    justify-content: flex-end;
+    gap: 10px 18px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 55px 0 48px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    max-width: 540px;
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .portrait-wrap {
+    width: min(88vw, 380px);
+    justify-self: center;
+  }
+
+  .intro {
+    margin-top: 30px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .pill {
+    min-width: 160px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .project-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-section,
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-section {
+    padding: 65px 0;
+  }
+
+  .contact-section {
+    padding: 70px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
