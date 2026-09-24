@@ -361,166 +361,50 @@ nav a:focus-visible {
    HERO PORTRAIT
    ========================================================= */
 
-.portrait-wrap {
-    position: relative;
-
-    width: min(100%, 550px);
-
-    height: 600px;
-
-    justify-self: end;
-    align-self: end;
-
-    overflow: visible;
-
-    z-index: 2;
-}
-
-
-/*
-   We are NOT using the old colored rectangles anymore.
-*/
-
-.portrait-shape {
-    display: none;
-}
-
-
-/* SOFT SHADOW / ATMOSPHERE BEHIND PORTRAIT */
-
-.portrait-wrap::before {
+.portrait-wrap::after {
     content: "";
 
     position: absolute;
 
-    z-index: 0;
+    z-index: 3;
 
-    width: 420px;
-    height: 450px;
+    left: -20%;
+    right: -20%;
+    bottom: -30px;
 
-    right: -10px;
-    bottom: 35px;
+    height: 110px;
 
-    border-radius: 50%;
+    pointer-events: none;
 
-    background: radial-gradient(
-        ellipse at center,
-        rgba(39, 161, 158, 0.18) 0%,
-        rgba(70, 193, 187, 0.10) 42%,
-        rgba(251, 253, 252, 0) 72%
+    background: linear-gradient(
+        to bottom,
+        rgba(251, 253, 252, 0),
+        rgba(251, 253, 252, 0.65) 65%,
+        #fbfdfc 100%
     );
-
-    filter: blur(30px);
-
-    animation:
-        atmosphereFloat
-        10s
-        ease-in-out
-        infinite;
 }
-
-
-/* SECOND SOFT LIGHT */
 
 .portrait-wrap::after {
     content: "";
 
     position: absolute;
 
-    z-index: 0;
+    z-index: 3;
 
-    width: 290px;
-    height: 290px;
+    left: -20%;
+    right: -20%;
+    bottom: -30px;
 
-    left: -60px;
-    bottom: 40px;
+    height: 110px;
 
-    border-radius: 50%;
+    pointer-events: none;
 
-    background:
-        rgba(77, 215, 205, 0.13);
-
-    filter: blur(65px);
-}
-
-
-/* ACTUAL CUTOUT PORTRAIT */
-
-.portrait-wrap img {
-    position: absolute;
-
-    z-index: 2;
-
-    width: 116%;
-    max-width: none;
-
-    height: auto;
-
-    right: -10%;
-    bottom: -50px;
-
-    object-fit: contain;
-
-    transform-origin: bottom center;
-
-    animation:
-        portraitFloat
-        7s
-        ease-in-out
-        infinite;
-
-    transition:
-        filter 0.4s ease;
-}
-
-
-/* PAUSE THE MOTION ON HOVER */
-
-.portrait-wrap:hover img {
-    animation-play-state: paused;
-
-    filter: drop-shadow(
-        0 14px 24px
-        rgba(16, 63, 61, 0.08)
+    background: linear-gradient(
+        to bottom,
+        rgba(251, 253, 252, 0),
+        rgba(251, 253, 252, 0.65) 65%,
+        #fbfdfc 100%
     );
-}
-
-
-/* PORTRAIT MOVEMENT */
-
-@keyframes portraitFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-7px)
-            rotate(-0.4deg);
-    }
-}
-
-
-/* BACKGROUND MOVEMENT */
-
-@keyframes atmosphereFloat {
-
-    0%,
-    100% {
-        transform:
-            translate(0, 0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-8px, 5px)
-            scale(1.04);
-    }
 }
 
 
@@ -530,10 +414,12 @@ nav a:focus-visible {
 
 .triple-rule {
     position: relative;
+    z-index: 10;
 
-    z-index: 5;
-
+    margin-top: -2px;
     padding: 0 0 46px;
+
+    background: var(--paper);
 }
 
 .triple-rule span {
