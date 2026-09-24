@@ -150,43 +150,40 @@ nav a:focus-visible {
     margin-top: 98px;
 
     min-height: 650px;
-
-    padding: 72px 0 0;
+    padding: 70px 0 0;
 
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(400px, 0.85fr);
-
+    grid-template-columns: minmax(0, 1.15fr) minmax(400px, 0.85fr);
     align-items: center;
-
     gap: 45px;
 
     /*
-       Soft atmospheric color similar to your reference.
-       The color belongs to the HERO, not the portrait box.
+       Turquoise across the entire hero.
+       Gradually fades to white toward the bottom.
     */
-
     background:
-
         radial-gradient(
-            circle at 0% 50%,
-            rgba(43, 211, 199, 0.28) 0%,
-            rgba(104, 224, 215, 0.17) 24%,
-            rgba(180, 239, 234, 0.08) 40%,
-            rgba(251, 253, 252, 0) 58%
+            circle at 82% 30%,
+            rgba(68, 214, 205, 0.34) 0%,
+            rgba(101, 223, 215, 0.25) 25%,
+            rgba(181, 241, 235, 0.12) 48%,
+            transparent 68%
         ),
-
         radial-gradient(
-            circle at 82% 48%,
-            rgba(50, 167, 165, 0.17) 0%,
-            rgba(113, 210, 205, 0.09) 25%,
-            rgba(251, 253, 252, 0) 48%
+            circle at 5% 35%,
+            rgba(61, 213, 202, 0.30) 0%,
+            rgba(137, 231, 224, 0.18) 32%,
+            transparent 62%
+        ),
+        linear-gradient(
+            to bottom,
+            #e1f8f5 0%,
+            #e8faf7 42%,
+            #f3fcfa 70%,
+            #fbfdfc 92%,
+            #fbfdfc 100%
         );
 }
-
-
 /* =========================================================
    HERO TEXT
    ========================================================= */
