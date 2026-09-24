@@ -1,28 +1,31 @@
 /* =========================================================
    VAJIHE ZAMANIDERKANI — PORTFOLIO
-   Clean CSS
-   Sans-serif: Satoshi
-   Serif: Playfair Display
+   COMPLETE STYLE.CSS
    ========================================================= */
+
+
+/* =========================
+   COLORS
+   ========================= */
 
 :root {
     --paper: #fbfdfc;
     --ink: #164846;
-    --dark: #103f3d;
+    --dark-teal: #0c4f4b;
     --muted: #627b78;
 
     --aqua: #1fc8bc;
     --teal: #008f87;
     --mint: #baf1eb;
-
     --line: #20c7bc;
+
     --placeholder: #dedede;
 }
 
 
-/* =========================================================
+/* =========================
    RESET
-   ========================================================= */
+   ========================= */
 
 * {
     margin: 0;
@@ -36,6 +39,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 
     background: var(--paper);
     color: var(--ink);
@@ -56,11 +60,41 @@ img {
 
 
 /* =========================================================
-   MAIN PAGE WIDTH
+   TYPOGRAPHY
+   Sans serif = Satoshi
+   Serif = Playfair Display
    ========================================================= */
 
-.site-header,
-.hero,
+body,
+button,
+input,
+textarea,
+select,
+nav,
+.eyebrow,
+.intro,
+.pill,
+.project-card p,
+.about-copy,
+.contact-heading > a,
+.contact-form,
+footer {
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
+}
+
+.hero h1,
+.section-title h2,
+.project-card h3,
+.about-section h2,
+.cv-section h2 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   NORMAL CONTENT WIDTH
+   ========================================================= */
+
 .triple-rule,
 .portfolio-section,
 .single-rule,
@@ -75,29 +109,34 @@ footer {
 
 /* =========================================================
    HEADER
+   Full width + sticky
    ========================================================= */
 
 .site-header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1000;
 
-    width: min(1180px, calc(100% - 80px));
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
     min-height: 98px;
+
+    padding-left: max(40px, calc((100vw - 1180px) / 2));
+    padding-right: max(40px, calc((100vw - 1180px) / 2));
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
 
-    background: rgba(251, 253, 252, 0.92);
+    background: rgba(251, 253, 252, 0.94);
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(0, 143, 135, 0.28);
+    border-bottom: 1px solid rgba(0, 143, 135, 0.25);
 }
 
 
@@ -121,100 +160,116 @@ footer {
 nav {
     display: flex;
     align-items: center;
-
     gap: clamp(22px, 4vw, 58px);
 }
 
 nav a {
-    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     font-size: 13px;
+    color: var(--ink);
 
     transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 nav a:hover,
 nav a:focus-visible {
     color: var(--aqua);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 
 /* =========================================================
    HERO
+   Full browser-width aqua background
    ========================================================= */
 
 .hero {
     position: relative;
-    margin-top: 98px;
+
+    width: 100vw;
+    max-width: none;
+
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 
     min-height: 650px;
-    padding: 70px 0 0;
+
+    padding:
+        70px
+        max(40px, calc((100vw - 1180px) / 2))
+        0;
 
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(400px, 0.85fr);
-    align-items: center;
-    gap: 45px;
 
-    /*
-       Turquoise across the entire hero.
-       Gradually fades to white toward the bottom.
-    */
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(400px, 0.85fr);
+
+    align-items: center;
+
+    gap: 55px;
+
+    overflow: hidden;
+
     background:
+
         radial-gradient(
-            circle at 82% 30%,
-            rgba(68, 214, 205, 0.34) 0%,
-            rgba(101, 223, 215, 0.25) 25%,
-            rgba(181, 241, 235, 0.12) 48%,
-            transparent 68%
+            circle at 78% 32%,
+            rgba(47, 201, 191, 0.32) 0%,
+            rgba(112, 224, 216, 0.20) 30%,
+            transparent 58%
         ),
+
         radial-gradient(
-            circle at 5% 35%,
-            rgba(61, 213, 202, 0.30) 0%,
-            rgba(137, 231, 224, 0.18) 32%,
-            transparent 62%
+            circle at 4% 25%,
+            rgba(39, 203, 192, 0.32) 0%,
+            rgba(127, 229, 221, 0.18) 35%,
+            transparent 60%
         ),
+
         linear-gradient(
             to bottom,
-            #e1f8f5 0%,
-            #e8faf7 42%,
-            #f3fcfa 70%,
-            #fbfdfc 92%,
-            #fbfdfc 100%
+            #d3f6f2 0%,
+            #dcf8f5 34%,
+            #e8faf7 60%,
+            #f3fcfa 78%,
+            #fafdfc 91%,
+            var(--paper) 100%
         );
 }
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
 
-.hero-copy {
+
+/* HERO TEXT */
+
+.hero-text {
     position: relative;
-    z-index: 4;
+    z-index: 5;
+    min-width: 0;
 }
 
 
-/* ARTIST · DESIGNER · EDUCATOR */
+/* SMALL TEXT ABOVE TITLE */
 
 .eyebrow {
-    margin: 0 0 16px;
+    margin: 0 0 20px;
 
     color: var(--teal);
-
-    font-family: "Satoshi", Arial, Helvetica, sans-serif;
 
     font-size: 10px;
     font-weight: 700;
 
-    letter-spacing: 2.2px;
+    letter-spacing: 2.4px;
     text-transform: uppercase;
 }
 
 
-/* MAIN HERO TITLE */
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
 
 .hero h1 {
-    max-width: 690px;
+    max-width: 700px;
 
     margin: 0;
 
@@ -224,37 +279,33 @@ nav a:focus-visible {
         "Times New Roman",
         serif;
 
-    font-size: clamp(46px, 5vw, 70px);
+    font-size: clamp(50px, 5vw, 72px);
 
     font-weight: 600;
 
-    line-height: 1.05;
+    line-height: 1.06;
 
     letter-spacing: -2.2px;
 
-    /*
-       Dark color arrives earlier,
-       closer to your Figma design.
-    */
-
     background: linear-gradient(
         100deg,
-        #31c9bd 0%,
-        #179f96 20%,
-        #167a74 34%,
-        #155b57 47%,
-        #164846 62%,
-        #103f3d 100%
+        #32cfc2 0%,
+        #20b9ae 17%,
+        #148c84 32%,
+        #176b66 43%,
+        #164846 58%,
+        #0d4441 100%
     );
 
     -webkit-background-clip: text;
     background-clip: text;
 
+    -webkit-text-fill-color: transparent;
     color: transparent;
 }
 
 
-/* FINE ART */
+/* Fine Art */
 
 .hero h1 em {
     font-family:
@@ -268,22 +319,18 @@ nav a:focus-visible {
 }
 
 
-/* HERO DESCRIPTION */
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
 
 .intro {
-    max-width: 620px;
+    max-width: 610px;
 
-    margin: 44px 0 0;
+    margin: 48px 0 0;
 
     color: var(--muted);
 
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 15px;
+    font-size: 14px;
 
     line-height: 1.55;
 }
@@ -294,10 +341,9 @@ nav a:focus-visible {
    ========================================================= */
 
 .hero-actions {
-    margin-top: 36px;
+    margin-top: 38px;
 
     display: flex;
-    align-items: center;
 
     gap: 18px;
 
@@ -307,7 +353,7 @@ nav a:focus-visible {
 .pill {
     min-width: 190px;
 
-    padding: 13px 25px;
+    padding: 14px 25px;
 
     display: inline-flex;
 
@@ -326,12 +372,6 @@ nav a:focus-visible {
 
     color: var(--ink);
 
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
-
     font-size: 12px;
 
     cursor: pointer;
@@ -348,86 +388,195 @@ nav a:focus-visible {
 
     background: linear-gradient(
         90deg,
-        #b7f1ea,
+        #b5f1e9,
         #98e5dd
     );
 
     box-shadow:
-        0 10px 25px rgba(0, 143, 135, 0.14);
+        0 10px 25px
+        rgba(0, 143, 135, 0.14);
 }
 
 
 /* =========================================================
-   HERO PORTRAIT
+   PORTRAIT
+   IMPORTANT:
+   Your HTML should point to your actual transparent PNG.
    ========================================================= */
 
-.portrait-wrap::after {
-    content: "";
+.portrait-wrap {
+    position: relative;
 
-    position: absolute;
+    width: min(100%, 560px);
 
-    z-index: 3;
+    height: 570px;
 
-    left: -20%;
-    right: -20%;
-    bottom: -30px;
+    justify-self: end;
 
-    height: 110px;
+    align-self: end;
 
-    pointer-events: none;
+    overflow: visible;
 
-    background: linear-gradient(
-        to bottom,
-        rgba(251, 253, 252, 0),
-        rgba(251, 253, 252, 0.65) 65%,
-        #fbfdfc 100%
-    );
+    z-index: 2;
 }
 
+
+/* SOFT LIGHT BEHIND PORTRAIT */
+
+.portrait-wrap::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    width: 480px;
+    height: 480px;
+
+    right: -30px;
+    top: 40px;
+
+    border-radius: 50%;
+
+    background: rgba(59, 205, 196, 0.16);
+
+    filter: blur(75px);
+
+    animation:
+        backgroundFloat
+        9s
+        ease-in-out
+        infinite;
+}
+
+
+/* SECOND SOFT GLOW */
+
 .portrait-wrap::after {
     content: "";
 
     position: absolute;
 
+    z-index: 0;
+
+    width: 300px;
+    height: 300px;
+
+    left: 20px;
+    bottom: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(95, 222, 213, 0.15);
+
+    filter: blur(60px);
+}
+
+
+/* REMOVE OLD SHAPES */
+
+.portrait-shape {
+    display: none;
+}
+
+
+/* ACTUAL TRANSPARENT PORTRAIT */
+
+.portrait-wrap img {
+    position: absolute;
+
     z-index: 3;
 
-    left: -20%;
-    right: -20%;
-    bottom: -30px;
+    width: auto;
+    max-width: none;
 
-    height: 110px;
+    height: 108%;
 
-    pointer-events: none;
+    right: -5%;
 
-    background: linear-gradient(
-        to bottom,
-        rgba(251, 253, 252, 0),
-        rgba(251, 253, 252, 0.65) 65%,
-        #fbfdfc 100%
-    );
+    bottom: -3px;
+
+    object-fit: contain;
+
+    object-position: bottom center;
+
+    border-radius: 0;
+
+    animation:
+        portraitFloat
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+/* PORTRAIT ANIMATION */
+
+@keyframes portraitFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            scale(1.012);
+    }
+}
+
+
+/* BACKGROUND MOVEMENT */
+
+@keyframes backgroundFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-8px, 6px)
+            scale(1.04);
+    }
+}
+
+
+/* PAUSE PORTRAIT ON HOVER */
+
+.portrait-wrap:hover img {
+    animation-play-state: paused;
 }
 
 
 /* =========================================================
-   THREE LINES BELOW HERO
+   THREE LINES
    ========================================================= */
 
 .triple-rule {
     position: relative;
+
     z-index: 10;
 
     margin-top: -2px;
-    padding: 0 0 46px;
 
-    background: var(--paper);
+    padding: 0 0 46px;
 }
 
 .triple-rule span {
     display: block;
 
+    width: 100%;
+
     height: 2px;
 
-    margin: 0 0 8px;
+    margin-bottom: 8px;
 
     background: linear-gradient(
         90deg,
@@ -439,7 +588,7 @@ nav a:focus-visible {
 
 
 /* =========================================================
-   PORTFOLIO SECTIONS
+   PORTFOLIO / SELECTED WORK
    ========================================================= */
 
 .portfolio-section {
@@ -465,9 +614,11 @@ nav a:focus-visible {
         "Times New Roman",
         serif;
 
-    font-size: 27px;
+    font-size: 32px;
 
     font-weight: 400;
+
+    color: var(--ink);
 }
 
 
@@ -488,6 +639,9 @@ nav a:focus-visible {
     min-width: 0;
 }
 
+
+/* PROJECT IMAGE */
+
 .project-image {
     width: 100%;
 
@@ -497,17 +651,7 @@ nav a:focus-visible {
 
     overflow: hidden;
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.project-image:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px
-        rgba(16, 63, 61, 0.08);
+    background: var(--placeholder);
 }
 
 .project-image img {
@@ -515,7 +659,17 @@ nav a:focus-visible {
     height: 100%;
 
     object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
 }
+
+.project-card:hover .project-image img {
+    transform: scale(1.025);
+}
+
+
+/* PLACEHOLDER */
 
 .project-image.placeholder {
     display: grid;
@@ -526,14 +680,11 @@ nav a:focus-visible {
 
     color: #8b8b8b;
 
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
-
     font-size: 11px;
 }
+
+
+/* PROJECT TITLE */
 
 .project-card h3 {
     margin: 18px 0 4px;
@@ -544,9 +695,11 @@ nav a:focus-visible {
         "Times New Roman",
         serif;
 
-    font-size: 19px;
+    font-size: 21px;
 
     font-weight: 400;
+
+    color: var(--ink);
 }
 
 .project-card p {
@@ -554,18 +707,12 @@ nav a:focus-visible {
 
     color: var(--muted);
 
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
-
     font-size: 11px;
 }
 
 
 /* =========================================================
-   SECTION DIVIDERS
+   SINGLE DIVIDER LINE
    ========================================================= */
 
 .single-rule {
@@ -590,13 +737,13 @@ nav a:focus-visible {
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
     gap: 100px;
 }
 
-.about-section h2,
-.cv-section h2 {
+.about-section h2 {
     margin: 0;
 
     font-family:
@@ -611,18 +758,14 @@ nav a:focus-visible {
     font-weight: 400;
 
     line-height: 1.12;
+
+    color: var(--ink);
 }
 
 .about-copy {
     max-width: 510px;
 
     color: var(--muted);
-
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
 
     font-size: 15px;
 
@@ -647,7 +790,22 @@ nav a:focus-visible {
 }
 
 .cv-section h2 {
-    margin-bottom: 32px;
+    margin: 0 0 32px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(36px, 4vw, 52px);
+
+    font-weight: 400;
+
+    line-height: 1.12;
+
+    color: var(--ink);
 }
 
 
@@ -661,17 +819,28 @@ nav a:focus-visible {
     display: grid;
 
     grid-template-columns:
-        0.8fr 1.2fr;
+        0.8fr
+        1.2fr;
 
     gap: 110px;
 
     align-items: start;
 }
 
+
+/* IMPORTANT LINE BETWEEN CV AND CONTACT */
+
+.contact-section {
+    border-top:
+        1px solid
+        rgba(0, 143, 135, 0.28);
+}
+
+
 .contact-heading h2 {
     margin: 0 0 24px;
 
-    color: #111;
+    color: var(--ink);
 
     font-family:
         "Playfair Display",
@@ -682,9 +851,9 @@ nav a:focus-visible {
     font-size:
         clamp(40px, 5vw, 64px);
 
-    font-weight: 500;
+    font-weight: 400;
 
-    line-height: 0.96;
+    line-height: 0.98;
 
     letter-spacing: -2px;
 }
@@ -692,22 +861,15 @@ nav a:focus-visible {
 .contact-heading > a {
     color: var(--teal);
 
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
-
     font-size: 12px;
 
     border-bottom:
-        1px solid var(--teal);
+        1px solid
+        var(--teal);
 }
 
 
-/* =========================================================
-   CONTACT FORM
-   ========================================================= */
+/* CONTACT FORM */
 
 .contact-form {
     display: grid;
@@ -721,12 +883,6 @@ nav a:focus-visible {
     gap: 7px;
 
     color: var(--muted);
-
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
 
     font-size: 11px;
 }
@@ -754,8 +910,6 @@ nav a:focus-visible {
         Helvetica,
         sans-serif;
 
-    font-size: 14px;
-
     resize: vertical;
 }
 
@@ -774,6 +928,7 @@ nav a:focus-visible {
 
 .contact-form .pill {
     min-width: 90px;
+
     width: 90px;
 
     justify-self: center;
@@ -790,19 +945,14 @@ footer {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     border-top:
         1px solid
-        rgba(0, 143, 135, 0.30);
+        rgba(0, 143, 135, 0.3);
 
     color: var(--muted);
-
-    font-family:
-        "Satoshi",
-        Arial,
-        Helvetica,
-        sans-serif;
 
     font-size: 10px;
 }
@@ -815,17 +965,18 @@ footer {
 @media (max-width: 900px) {
 
     .hero {
-        min-height: 580px;
-
         grid-template-columns:
             minmax(0, 1fr)
-            340px;
+            330px;
 
         gap: 30px;
+
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 50px;
     }
 
     .intro {
@@ -833,20 +984,18 @@ footer {
     }
 
     .portrait-wrap {
-        width: 360px;
         height: 520px;
     }
 
     .portrait-wrap img {
-        width: 120%;
-
-        right: -15%;
-        bottom: -35px;
+        height: 103%;
+        right: -12%;
     }
 
     .card-grid {
         gap: 25px;
     }
+
 }
 
 
@@ -856,8 +1005,6 @@ footer {
 
 @media (max-width: 700px) {
 
-    .site-header,
-    .hero,
     .triple-rule,
     .portfolio-section,
     .single-rule,
@@ -865,29 +1012,36 @@ footer {
     .cv-section,
     .contact-section,
     footer {
-        width:
-            min(100% - 40px, 1180px);
+        width: calc(100% - 40px);
     }
 
 
     /* HEADER */
 
     .site-header {
-        padding: 22px 0;
+        min-height: 82px;
 
-        align-items: flex-start;
+        padding:
+            16px
+            20px;
+
+        align-items: center;
+
+        gap: 15px;
     }
 
     .logo img {
-        width: 125px;
+        width: 120px;
     }
 
     nav {
-        max-width: 230px;
+        max-width: 220px;
 
         justify-content: flex-end;
 
-        gap: 10px 18px;
+        gap:
+            8px
+            15px;
 
         flex-wrap: wrap;
     }
@@ -900,39 +1054,43 @@ footer {
     /* HERO */
 
     .hero {
+        width: 100vw;
+
         min-height: auto;
 
-        padding: 55px 0 0;
+        margin-left:
+            calc(50% - 50vw);
+
+        padding:
+            55px
+            20px
+            0;
 
         grid-template-columns: 1fr;
 
-        gap: 20px;
-
-        background:
-
-            radial-gradient(
-                circle at 0% 30%,
-                rgba(43, 211, 199, 0.24),
-                rgba(251, 253, 252, 0) 52%
-            );
+        gap: 25px;
     }
 
+
     .hero h1 {
-        max-width: 560px;
+        max-width: 600px;
 
         font-size:
             clamp(42px, 12vw, 58px);
+
+        letter-spacing: -1.5px;
     }
+
 
     .intro {
         margin-top: 30px;
-
-        font-size: 14px;
     }
+
 
     .hero-actions {
         gap: 12px;
     }
+
 
     .pill {
         min-width: 160px;
@@ -942,26 +1100,30 @@ footer {
     /* PORTRAIT */
 
     .portrait-wrap {
-        width:
-            min(100%, 440px);
+        width: 100%;
 
-        height: 500px;
+        max-width: 480px;
+
+        height: 470px;
 
         justify-self: center;
-
-        margin-top: 10px;
     }
+
 
     .portrait-wrap img {
-        width: 115%;
+        height: 105%;
 
-        right: -7%;
+        right: 50%;
 
-        bottom: -35px;
+        transform: translateX(50%);
+
+        bottom: 0;
+
+        animation: none;
     }
 
 
-    /* WORK */
+    /* PROJECTS */
 
     .card-grid {
         grid-template-columns: 1fr;
@@ -969,39 +1131,38 @@ footer {
         gap: 48px;
     }
 
+
     .project-image {
         aspect-ratio: 4 / 3;
     }
 
 
-    /* ABOUT + CONTACT */
+    /* ABOUT */
 
-    .about-section,
-    .contact-section {
+    .about-section {
+        padding: 65px 0;
+
         grid-template-columns: 1fr;
 
         gap: 42px;
     }
 
-    .about-section {
-        padding: 65px 0;
-    }
+
+    /* CONTACT */
 
     .contact-section {
         padding: 70px 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
     }
 
-
-    /* FOOTER */
-
-    footer {
-        gap: 20px;
-    }
 }
 
 
 /* =========================================================
-   ACCESSIBILITY — REDUCED MOTION
+   REDUCED MOTION / ACCESSIBILITY
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1016,4 +1177,5 @@ footer {
         animation: none !important;
         transition: none !important;
     }
+
 }
