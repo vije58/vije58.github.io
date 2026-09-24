@@ -78,6 +78,13 @@ footer {
    ========================================================= */
 
 .site-header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    width: min(1180px, calc(100% - 80px));
     min-height: 98px;
 
     display: flex;
@@ -85,19 +92,12 @@ footer {
     justify-content: space-between;
     gap: 40px;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: rgba(251, 253, 252, 0.92);
 
-    background: rgba(251, 253, 252, 0.90);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
     border-bottom: 1px solid rgba(0, 143, 135, 0.28);
-
-    transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 
@@ -147,6 +147,7 @@ nav a:focus-visible {
 
 .hero {
     position: relative;
+    margin-top: 98px;
 
     min-height: 650px;
 
