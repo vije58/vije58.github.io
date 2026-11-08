@@ -108,7 +108,7 @@ section[id] {
     border-radius: 50px;
     background: #fdffff;
 
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     line-height: normal;
 
@@ -133,6 +133,61 @@ section[id] {
 .menu a:focus-visible {
     box-shadow: 0 6px 16px -6px rgba(20, 92, 93, 0.35);
     transform: translateY(-1px);
+}
+
+
+/* Hamburger button — only visible on phones (see the 820px rule below) */
+
+.menu-toggle {
+    display: none;
+
+    position: relative;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 0;
+    background: none;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+
+    height: 2px;
+
+    border-radius: 2px;
+
+    background: var(--title);
+
+    transition:
+        top 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.2s ease;
+}
+
+.menu-toggle span:nth-child(1) { top: 14px; }
+.menu-toggle span:nth-child(2) { top: 21px; }
+.menu-toggle span:nth-child(3) { top: 28px; }
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    top: 21px;
+    transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    top: 21px;
+    transform: rotate(-45deg);
 }
 
 
@@ -555,13 +610,13 @@ section[id] {
 }
 
 .tile-label {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 
     font-family: var(--serif);
-    font-size: 44px;
+    font-size: 34px;
     font-weight: 400;
-    line-height: 52px;
-    letter-spacing: -2.64px;
+    line-height: 40px;
+    letter-spacing: -1.7px;
 }
 
 .tile-arrow {
@@ -742,6 +797,7 @@ section[id] {
 
 .uxui-inner {
     position: relative;
+    z-index: 1;
 
     min-height: 551px;
 
@@ -1084,7 +1140,7 @@ section[id] {
 .menu-footer a {
     margin-right: -8px;
 
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .menu-footer a:last-child {
@@ -1166,6 +1222,41 @@ section[id] {
    RESPONSIVE
    ========================================================= */
 
+/* Below ~1360px the full-width UX/UI picture would slide under the three
+   cards, so it is scaled to fit the space to the right of them instead. */
+@media (max-width: 1360px) {
+
+    .uxui {
+        background: #fcfdfd;
+    }
+
+    .uxui::before {
+        content: "";
+
+        position: absolute;
+
+        right: 0;
+        bottom: 0;
+
+        width: calc((100vw - 690px) * 2.115);
+        height: calc((100vw - 690px) * 0.791);
+
+        background: url("uxui-bg.png") right bottom / 100% 100% no-repeat;
+
+        -webkit-mask-image:
+            linear-gradient(to bottom, transparent 0, #000 24%),
+            linear-gradient(to right, transparent 0, #000 14%);
+        -webkit-mask-composite: source-in;
+        mask-image:
+            linear-gradient(to bottom, transparent 0, #000 24%),
+            linear-gradient(to right, transparent 0, #000 14%);
+        mask-composite: intersect;
+
+        pointer-events: none;
+    }
+}
+
+
 @media (max-width: 1250px) {
 
     .menu {
@@ -1177,13 +1268,13 @@ section[id] {
     .menu a {
         width: 118px;
 
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .tile-label {
-        font-size: 36px;
-        line-height: 44px;
-        letter-spacing: -2px;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -1.5px;
     }
 
     .tile {
@@ -1242,7 +1333,7 @@ section[id] {
 
         padding: 0 14px;
 
-        font-size: 16px;
+        font-size: 15px;
     }
 
     section[id] {
@@ -1358,7 +1449,17 @@ section[id] {
     .uxui-inner {
         min-height: 0;
 
-        padding-bottom: 48px;
+        padding-bottom: 340px;
+    }
+
+    .uxui::before {
+        left: 0;
+
+        width: 100%;
+        height: 300px;
+
+        background-size: cover;
+        background-position: 78% bottom;
     }
 
     .ux-cards {
@@ -1445,6 +1546,96 @@ section[id] {
 }
 
 
+@media (max-width: 820px) {
+
+    .site-header {
+        height: 64px;
+        min-height: 64px;
+    }
+
+    .header-inner {
+        padding: 0;
+
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+
+    .logo img {
+        width: 130px;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        margin-right: -10px;
+    }
+
+    .site-header .menu {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0;
+
+        margin: 0;
+        padding: 6px 20px 18px;
+
+        background: #ffffff;
+        box-shadow: 0 16px 24px -14px rgba(20, 92, 93, 0.35);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s;
+    }
+
+    .site-header .menu.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .site-header .menu a {
+        width: 100%;
+        height: 54px;
+
+        padding: 0 8px;
+
+        justify-content: flex-start;
+
+        border-radius: 0;
+        border-bottom: 1px solid rgba(20, 92, 93, 0.12);
+
+        background: transparent;
+
+        font-size: 17px;
+    }
+
+    .site-header .menu a:last-child {
+        border-bottom: 0;
+    }
+
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible {
+        box-shadow: none;
+        transform: none;
+    }
+
+    section[id] {
+        scroll-margin-top: 76px;
+    }
+}
+
+
 @media (max-width: 600px) {
 
     .wrap,
@@ -1469,9 +1660,9 @@ section[id] {
     }
 
     .tile-label {
-        font-size: 28px;
-        line-height: 34px;
-        letter-spacing: -1.4px;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: -1.2px;
     }
 
     .tile {
